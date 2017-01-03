@@ -1,4 +1,35 @@
 <html>
 <title> test cut out map </title>
 <img src="map.jpg" width="1024px" height="768px">
+  <style type="text/css">
+
+  a.hovertext {
+    position: relative;
+    width: 500px;
+    text-decoration: none !important;
+    text-align: center;
+  }
+  a.hovertext:after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0.5em 20px;
+    width: 460px;
+    background: rgba(0,0,0,0.8);
+    text-decoration: none !important;
+    color: #fff;
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+  }
+  a.hovertext:hover:after, a.hovertext:focus:after {
+    opacity: 1.0;
+  }
+
+</style>
+
+<p><a class="hovertext" href="#" title="The title attribute of the link appears over the image on hover"><img src="map.jpg" width="500" height="309" border="0" alt=""></a></p>
 </html>
