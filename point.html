@@ -15,7 +15,7 @@
 
 <div id='map'></div>
 <script>
-mapboxgl.accessToken = 'pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJhNVlHd29ZIn0.ti6wATGDWOmCnCYen-Ip7Q';
+mapboxgl.accessToken = 'pk.eyJ1IjoicnQxeXJydSIsImEiOiJjaXdoaXp5NHowMDV0MnptbTkwZTN5aXU2In0.6Lj79CTmzj-wNfoLmA-MRw';
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
@@ -31,11 +31,22 @@ map.on('load', function () {
                 "type": "Feature",
                 "geometry": {
                                         "type": "Point",
-                    "coordinates": [85.03238901390978, 25.913188059745586]
+                    "coordinates": [85.3086132, 23.3493319]
+                    ,
                 },
                 "properties": {
-                    "title": "survey_1",
+                    "title": "Siddharth",
                     "icon": "monument"
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [85.3086132, 23.3493319]
+                },
+                "properties": {
+                    "title": "Amit",
+                    "icon": "harbor"
                 }
             }]
         }
@@ -45,10 +56,10 @@ map.on('load', function () {
         "type": "symbol",
         "source": "points",
         "layout": {
-            "icon-image": "{icon}-10",
+            "icon-image": "{icon}-15",
             "text-field": "{title}",
-            "text-font": ["Open Sans", "Arial"],
-            "text-offset": [0, 0.3],
+            "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+            "text-offset": [0, 0.6],
             "text-anchor": "top"
         }
     });
