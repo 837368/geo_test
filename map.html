@@ -38,20 +38,7 @@
         "Bhuvan Satellite": bhuvanSatellite,
         "OpenStreetMap India": indiaMap
     };
-    var map = L.map('map', {
-            layers: indiaMap
-        }, {
-            maxBounds: bounds,
-        })
-        .addControl(L.mapbox.geocoderControl('mapbox.places', {
-            autocomplete: true
-        }))
-        .setView([22.14980, 79.08060], 4);
-    L.hash(map);
-    L.control.layers(baseLayers, overlayMaps, {
-        position: 'topleft',
-    }).addTo(map);
- var map = new mapboxgl.Map({
+  var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
     center: [84, 23],
@@ -98,6 +85,20 @@ map.on('load', function () {
         }
     });
 });
+    var map = L.map('map', {
+            layers: indiaMap
+        }, {
+            maxBounds: bounds,
+        })
+        .addControl(L.mapbox.geocoderControl('mapbox.places', {
+            autocomplete: true
+        }))
+        .setView([22.14980, 79.08060], 4);
+    L.hash(map);
+    L.control.layers(baseLayers, overlayMaps, {
+        position: 'topleft',
+    }).addTo(map);
+
 </script>
 </body>
 </html>
