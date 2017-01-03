@@ -37,6 +37,29 @@ L.mapbox.accessToken = 'pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJhNVlHd29ZIn0.ti6wA
     L.control.layers(baseLayers, overlayMaps, {
         position: 'topleft',
     }).addTo(map);
+  var mapboxClient = new MapboxClient('pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJhNVlHd29ZIn0.ti6wATGDWOmCnCYen-Ip7Q
+');
+
+// With options
+mapboxClient.getDistances([
+  [22.4431142, 78.6875431],
+  [23.0431142, 79.6875431],
+  [23.0431142, 79.0875431],
+  [25.0431142, 77.0175431],
+  [24.4831142, 72.6875431]
+], {
+  profile: 'walking'
+}, function(err, results) {
+  console.log(results);
+});
+
+// Results is an object like:
+{ durations:
+  [ [ 0, 1196, 3977, 3415, 5196 ],
+    [ 1207, 0, 3775, 3213, 4993 ],
+    [ 3976, 3774, 0, 2650, 2579 ],
+    [ 3415, 3212, 2650, 0, 3869 ],
+    [ 5208, 5006, 2579, 3882, 0 ] ] }
 </script>
 
 </body>
