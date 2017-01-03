@@ -37,28 +37,60 @@ L.mapbox.accessToken = 'pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJhNVlHd29ZIn0.ti6wA
     L.control.layers(baseLayers, overlayMaps, {
         position: 'topleft',
     }).addTo(map);
-  
-var mapboxClient = new MapboxClient('pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJhNVlHd29ZIn0.ti6wATGDWOmCnCYen-Ip7Q');
-// With options
-mapboxClient.getDistances([
-  [22.4431142, 78.6875431],
-  [23.0431142, 79.6875431],
-  [23.0431142, 79.0875431],
-  [25.0431142, 77.0175431],
-  [24.4831142, 72.6875431]
-], {
-  profile: 'walking'
-}, function(err, results) {
-  console.log(results);
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center: [84,23],
+    zoom: 10
 });
-
-// Results is an object like:
-{ durations:
-  [ [ 0, 1196, 3977, 3415, 5196 ],
-    [ 1207, 0, 3775, 3213, 4993 ],
-    [ 3976, 3774, 0, 2650, 2579 ],
-    [ 3415, 3212, 2650, 0, 3869 ],
-    [ 5208, 5006, 2579, 3882, 0 ] ] }
+map.on('load', function () {
+    map.addSource("route", {
+        "type": "geojson",
+        "data": {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [84.48369692456104, 24.83381888486939],
+                    [84.48348236083984, 24.83317489144141],
+                    [84.48339653015138, 24.83270036624107],
+                    [84.48356819152832, 24.832056363179625],
+                    [84.48404026031496, 24.83114119107971],
+                    [84.48404026031496, 24.83049717427869],
+                    [84.48348236083984, 24.829920943955045],
+                    [84.48356819152832, 24.82954808664175],
+                    [84.48507022857666, 24.82944639795659],
+                    [84.48610019683838, 24.82880236636284],
+                    [84.48695850242314, 24.82931081282506],
+                    [84.48700141906738, 24.83080223556934],
+                    [84.48751640319824, 24.83168351665724],
+                    [84.48803138732912, 24.832158048267786],
+                    [84.48888969421387, 24.83297152392784],
+                    [84.48987674713133, 24.83263257682617],
+                    [84.49043464660643, 24.832924629287755],
+                    [84.49125003814696, 24.832429207817725],
+                    [84.49163627624512, 24.832564787218985],
+                    [84.49222409106445, 24.83324825839438],
+                    [84.49248204345702, 24.83368330777276]
+                ]
+            }
+        }
+    });
+    map.addLayer({
+        "id": "route",
+        "type": "line",
+        "source": "route",
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "#888",
+            "line-width": 8
+        }
+    });
+});
 </script>
 
 </body>
