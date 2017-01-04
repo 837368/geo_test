@@ -22,7 +22,7 @@ var map = new mapboxgl.Map({
     center: [85, 23],
     zoom: 8
 });
-var popup = new mapboxgl.Popup({closeOnClick: false})
+var popup = new mapboxgl.Popup({closeOnClick:true})
     .setLngLat([85.3086132, 23.3493319])
     .setHTML('<p> Survey Conducted : 0</p>')
     .addTo(map);
