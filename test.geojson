@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "siddh#1" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "Primary ID": "1.26", "Secondary ID": "p1, p1" }, "geometry": { "type": "Point", "coordinates": [ 85, 23.297 ] } },
+{ "type": "Feature", "properties": { "Primary ID": "1.87", "Secondary ID": "p2 ,p2" }, "geometry": { "type": "Point", "coordinates": [ 83.434494,25.3199997 ] } },
+{ "type": "Feature", "properties": { "Primary ID": "1.8", "Secondary ID": "p3, p3" }, "geometry": { "type": "Point", "coordinates": [ 82.1432, 26.5106 ] } },
+{ "type": "Feature", "properties": { "Primary ID": "1.6", "Secondary ID": "p4,p4" }, "geometry": { "type": "Point", "coordinates": [ 78.0537, 21.6547 ] } },
+{ "type": "Feature", "properties": { "Primary ID": "1.56", "Secondary ID": "p5, p5" }, "geometry": { "type": "Point", "coordinates": [ 69.6936667, 23.2608333 ] } },
+{ "type": "Feature", "properties": { "Primary ID": "1.7", "Secondary ID": "p6, p6" }, "geometry": { "type": "Point", "coordinates": [ 87.332, 26.9926 ] } },
+{ "type": "Feature", "properties": { "Primary ID": "1.3", "Secondary ID": "p7,p7" }, "geometry": { "type": "Point", "coordinates": [ 88.4235, 29.109 ] } },
+{ "type": "Feature", "properties": { "Primary ID": "3.1", "Secondary ID": "p8, p8" }, "geometry": { "type": "Point", "coordinates": [ 82.8529, 31.9421 ] } }
+]
+}
